@@ -1,4 +1,6 @@
-<img src="assets/title.png" width="1266" alt="Omapager">
+# SigmaOS Omapager
+
+> Forked from omacom/omapager (MIT). See `SIGMAOS_FORK.md`.
 
 <!--
  ▄█████▄    ▄███████████▄   ▄███████   ▄███████▄  ▄███████    ▄█████▄   ▄████████  ▄███████▄
