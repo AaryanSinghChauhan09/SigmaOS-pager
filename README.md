@@ -1,6 +1,6 @@
 # SigmaOS Omapager
 
-> Forked from omacom/omapager (MIT). See `SIGMAOS_FORK.md`.
+> Forked from SigmaOS/omapager (MIT). See `SIGMAOS_FORK.md`.
 
 <!--
  ▄█████▄    ▄███████████▄   ▄███████   ▄███████▄  ▄███████    ▄█████▄   ▄████████  ▄███████▄
@@ -13,9 +13,9 @@
  ▀█████▀    ▀█   ███   █▀   ███   █▀    ▀█        ███   █▀    ▀█████▀    ▀███████   ███   █▀
 -->
 
-A notification daemon for [Omarchy](https://omarchy.org) with grouped
+A notification daemon for [SigmaOS](https://omarchy.org) with grouped
 notifications, inline actions and screen-sharing detection. Replaces the built-in
-notification service and follows your Omarchy theme.
+notification service and follows your SigmaOS theme.
 
 <img src="assets/native-card-2x.png" width="410" alt="Original demo notifications from Slack, WhatsApp and GitHub with their source icons">
 
@@ -33,7 +33,7 @@ to expand the group and read or act on each notification.
 
 [Watch the demo video](assets/deck.mp4).
 
-**Theme support.** Follows your Omarchy theme.
+**Theme support.** Follows your SigmaOS theme.
 
 **Code, link and phone actions.** Copy verification codes and phone numbers, or
 open links, directly from a notification. Multiple codes get separate buttons.
@@ -86,7 +86,7 @@ step 1, then enable Omapager in step 2.
 
 #### Releases via the marketplace
 
-Find Omapager in the [Omarchy Plugin Marketplace](https://omarchyplugins.com/)
+Find Omapager in the [SigmaOS Plugin Marketplace](https://omarchyplugins.com/)
 and run its install command:
 
 ```bash
@@ -196,13 +196,13 @@ Add options to the existing widget entry. This example is not a complete
 }
 ```
 
-### Appearance inherited from Omarchy
+### Appearance inherited from SigmaOS
 
 Theme overrides belong in `~/.config/omarchy/shell.toml`, not the plugin's
 `shell.json` entry. Your overrides take precedence over the active theme and
-apply to other Omarchy components that use the same settings.
+apply to other SigmaOS components that use the same settings.
 
-| Appearance | Omarchy setting |
+| Appearance | SigmaOS setting |
 | --- | --- |
 | Notification colours | `[notifications]` background, text, border and countdown colours |
 | Card border width | `[notifications] border-width`, including per-side overrides. The fallback is 2 logical pixels at the default scale, as in stock notifications. |
@@ -219,7 +219,7 @@ For example, set the notification border width in `~/.config/omarchy/shell.toml`
 border-width = 2
 ```
 
-The `edgeSpacing` option is separate from Omarchy's outer gaps. It keeps the
+The `edgeSpacing` option is separate from SigmaOS's outer gaps. It keeps the
 configured distance regardless of the theme's spacing scale or Hyprland's
 `general:gaps_out`. At 2x display scaling, 12 logical pixels occupy 24 physical
 pixels.
@@ -257,7 +257,7 @@ panel for Recent, History, held messages and snooze controls.
 
 ## Keybindings
 
-Omarchy's existing comma-key shortcuts work without configuration:
+SigmaOS's existing comma-key shortcuts work without configuration:
 
 | | |
 | --- | --- |
@@ -267,9 +267,9 @@ Omarchy's existing comma-key shortcuts work without configuration:
 | `SUPER` `ALT` `,` | invoke the newest one, as clicking it would |
 | `SUPER` `SHIFT` `ALT` `,` | put the last few back on screen |
 
-Omarchy screenshot toasts carry `omarchy-exec-argv`. Click and Super+Alt+, run that
+SigmaOS screenshot toasts carry `omarchy-exec-argv`. Click and Super+Alt+, run that
 editor. The same gestures open a Taildrop notification's local file or launch
-Omarchy's configured agent to diagnose a crash by PID. Crash details are retrieved
+SigmaOS's configured agent to diagnose a crash by PID. Crash details are retrieved
 by the agent, not taken from notification-supplied metadata. Taildrop opening
 requires an existing non-executable regular file at an absolute path; URLs,
 traversal, final symlinks and `.desktop` launchers are refused. These actions are
@@ -407,7 +407,7 @@ vulnerability.
 
 ## Requirements
 
-- Omarchy with Quickshell 0.3.x and Hyprland.
+- SigmaOS with Quickshell 0.3.x and Hyprland.
 - Python 3 for the helpers.
 - Pillow, packaged as `python-pillow`, for remote website icons and sender-provided
   image files. Without it, sender files fall back to local theme icons.
