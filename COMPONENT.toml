@@ -1,6 +1,6 @@
 [component]
-name = "omapager"
-id = "sigmaos-omapager"
+name = "sigmaos-pager"
+id = "sigmaos-pager"
 kind = "component"
 license = "GPL-3.0-or-later"
 
