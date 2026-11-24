@@ -13,7 +13,7 @@
  ▀█████▀    ▀█   ███   █▀   ███   █▀    ▀█        ███   █▀    ▀█████▀    ▀███████   ███   █▀
 -->
 
-A notification daemon for [SigmaOS](https://omarchy.org) with grouped
+A notification daemon for [SigmaOS](https://sigmaos.org) with grouped
 notifications, inline actions and screen-sharing detection. Replaces the built-in
 notification service and follows your SigmaOS theme.
 
@@ -110,9 +110,9 @@ After either installation method, disable the built-in notification service and
 enable Omapager. Only one notification daemon can run at a time.
 
 ```bash
-omarchy-shell shell rescanPlugins
-omarchy plugin disable omarchy.notifications
-omarchy plugin enable njpatel.omapager --section center --after omarchy.indicators
+sigmaos-shell shell rescanPlugins
+omarchy plugin disable sigmaos.notifications
+omarchy plugin enable njpatel.omapager --section center --after sigmaos.indicators
 omarchy restart shell
 ```
 
@@ -133,7 +133,7 @@ Do not use `omarchy refresh shell`, which resets your shell configuration.
 ```bash
 omarchy plugin disable njpatel.omapager
 omarchy plugin remove njpatel.omapager
-omarchy plugin enable omarchy.notifications
+omarchy plugin enable sigmaos.notifications
 omarchy restart shell
 ```
 
@@ -267,7 +267,7 @@ SigmaOS's existing comma-key shortcuts work without configuration:
 | `SUPER` `ALT` `,` | invoke the newest one, as clicking it would |
 | `SUPER` `SHIFT` `ALT` `,` | put the last few back on screen |
 
-SigmaOS screenshot toasts carry `omarchy-exec-argv`. Click and Super+Alt+, run that
+SigmaOS screenshot toasts carry `sigmaos-exec-argv`. Click and Super+Alt+, run that
 editor. The same gestures open a Taildrop notification's local file or launch
 SigmaOS's configured agent to diagnose a crash by PID. Crash details are retrieved
 by the agent, not taken from notification-supplied metadata. Taildrop opening
@@ -284,39 +284,39 @@ to `~/.config/hypr/bindings.lua`. Use `hl.unbind` to remove a conflicting bindin
 ```lua
 -- Copy the newest code and dismiss its notification.
 o.bind("SUPER + ALT + C", "Copy code from newest notification",
-       "omarchy-shell omapager offer code")
+       "sigmaos-shell omapager offer code")
 
 -- Snooze all sources for an hour.
 o.bind("SUPER + CTRL + ALT + comma", "Snooze all notifications for an hour",
-       "omarchy-shell omapager snoozeAll 60")
+       "sigmaos-shell omapager snoozeAll 60")
 
 -- Toggle the notification panel.
 o.bind("SUPER + CTRL + SHIFT + comma", "Notification options",
-       "omarchy-shell omapager.panel toggle")
+       "sigmaos-shell omapager.panel toggle")
 ```
 
 ## Scripting
 
 ```
-omarchy-shell omapager count            how many are on screen
-omarchy-shell omapager clear            dismiss them
-omarchy-shell omapager dnd              toggle Do Not Disturb
-omarchy-shell omapager expand           open the deck, as hovering would
-omarchy-shell omapager offer code       take the front card's offer (code|link|phone)
-omarchy-shell omapager act reply        invoke one of the sender's actions
-omarchy-shell omapager reply "text"     answer the front card ("" opens the field)
-omarchy-shell omapager snooze 60        quieten the front card's source, in minutes
-omarchy-shell omapager snoozeAll 60     quieten everything for 60 minutes, or wake it
-omarchy-shell omapager codes off        stop letting verification codes through
-omarchy-shell omapager unsnooze ""      wake everything ("" for all, or a source key)
-omarchy-shell omapager snoozes          what is snoozed, and until when
-omarchy-shell omapager stack source     switch stacking mode
-omarchy-shell omapager align right      switch which end the buttons sit at
-omarchy-shell omapager probe            show runtime configuration and helper status as JSON
+sigmaos-shell omapager count            how many are on screen
+sigmaos-shell omapager clear            dismiss them
+sigmaos-shell omapager dnd              toggle Do Not Disturb
+sigmaos-shell omapager expand           open the deck, as hovering would
+sigmaos-shell omapager offer code       take the front card's offer (code|link|phone)
+sigmaos-shell omapager act reply        invoke one of the sender's actions
+sigmaos-shell omapager reply "text"     answer the front card ("" opens the field)
+sigmaos-shell omapager snooze 60        quieten the front card's source, in minutes
+sigmaos-shell omapager snoozeAll 60     quieten everything for 60 minutes, or wake it
+sigmaos-shell omapager codes off        stop letting verification codes through
+sigmaos-shell omapager unsnooze ""      wake everything ("" for all, or a source key)
+sigmaos-shell omapager snoozes          what is snoozed, and until when
+sigmaos-shell omapager stack source     switch stacking mode
+sigmaos-shell omapager align right      switch which end the buttons sit at
+sigmaos-shell omapager probe            show runtime configuration and helper status as JSON
 
-omarchy-shell omapager.panel toggle     the panel
-omarchy-shell omapager.panel expand x   open a source's held list, as clicking it would
-omarchy-shell omapager.panel openSettings  notification preferences
+sigmaos-shell omapager.panel toggle     the panel
+sigmaos-shell omapager.panel expand x   open a source's held list, as clicking it would
+sigmaos-shell omapager.panel openSettings  notification preferences
 ```
 
 ## Demo
@@ -390,7 +390,7 @@ Sandboxed helpers receive access to the files they need. Remote icons still need
 network access, and KDE Connect receives the session bus without destination
 filtering. Bubblewrap does not isolate the QML shell itself.
 
-Run `omarchy-shell omapager probe` to check whether helpers use `sandboxed`,
+Run `sigmaos-shell omapager probe` to check whether helpers use `sandboxed`,
 `direct` or `blocked` mode. See [the security architecture](docs/SECURITY_ARCHITECTURE.md)
 for the exact limits and access rules.
 
