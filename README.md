@@ -101,7 +101,7 @@ Clone `main` for the latest changes between releases:
 
 ```bash
 git clone --branch main https://github.com/njpatel/omapager.git \
-  ~/.config/omarchy/plugins/njpatel.omapager
+  ~/.config/sigmaos/plugins/njpatel.omapager
 ```
 
 ### 2. Enable Omapager
@@ -121,7 +121,7 @@ omarchy restart shell
 Use the marketplace for release updates. For an edge checkout:
 
 ```bash
-git -C ~/.config/omarchy/plugins/njpatel.omapager pull --ff-only
+git -C ~/.config/sigmaos/plugins/njpatel.omapager pull --ff-only
 omarchy restart shell
 ```
 
@@ -138,7 +138,7 @@ omarchy restart shell
 ```
 
 Removal keeps notification history, icon cache and other state in
-`~/.local/state/omarchy/omapager/`. Delete that directory separately if you also
+`~/.local/state/sigmaos/omapager/`. Delete that directory separately if you also
 want to remove the stored data.
 
 ## Settings
@@ -150,7 +150,7 @@ control screen-sharing snooze suggestions.
 <img src="assets/display-settings-2x.png" width="420" alt="Notification preferences for display, countdown animation and screen-sharing snooze suggestions">
 
 Changes save to the `njpatel.omapager` bar-widget entry in
-`~/.config/omarchy/shell.json`. You can edit the other options there too.
+`~/.config/sigmaos/shell.json`. You can edit the other options there too.
 `edgeSpacing`, `fetchRemoteIcons` and `requireSandbox` are config-only. Defaults
 below apply to new configurations, not choices you have already saved.
 
@@ -198,7 +198,7 @@ Add options to the existing widget entry. This example is not a complete
 
 ### Appearance inherited from SigmaOS
 
-Theme overrides belong in `~/.config/omarchy/shell.toml`, not the plugin's
+Theme overrides belong in `~/.config/sigmaos/shell.toml`, not the plugin's
 `shell.json` entry. Your overrides take precedence over the active theme and
 apply to other SigmaOS components that use the same settings.
 
@@ -212,7 +212,7 @@ apply to other SigmaOS components that use the same settings.
 | Button and switch states | `[controls]` |
 | Internal spacing and padding | `[spacing]` |
 
-For example, set the notification border width in `~/.config/omarchy/shell.toml`:
+For example, set the notification border width in `~/.config/sigmaos/shell.toml`:
 
 ```toml
 [notifications]
@@ -336,7 +336,7 @@ to leave existing notifications on screen.
 
 The routing scene lists the window or URL each notification should open. The
 reply scene lets you type and send a reply without contacting a phone. It saves
-the latest reply in `~/.local/state/omarchy/omapager/reply-demo/reply.json`.
+the latest reply in `~/.local/state/sigmaos/omapager/reply-demo/reply.json`.
 Each run creates a new demo session, which expires after 30 minutes.
 
 `--scene close` keeps three cards on screen with live default actions. Repeatedly
@@ -401,7 +401,7 @@ verification-code notifications before saving them, but detection cannot identif
 every secret. Copied codes clear after the configured timeout only if the
 clipboard still contains the same code.
 
-State lives in `~/.local/state/omarchy/omapager/`. See [settings](#settings) for
+State lives in `~/.local/state/sigmaos/omapager/`. See [settings](#settings) for
 retention and clipboard options, and [SECURITY.md](SECURITY.md) to report a
 vulnerability.
 
