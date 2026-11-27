@@ -86,11 +86,11 @@ step 1, then enable Omapager in step 2.
 
 #### Releases via the marketplace
 
-Find Omapager in the [SigmaOS Plugin Marketplace](https://omarchyplugins.com/)
+Find Omapager in the [SigmaOS Plugin Marketplace](https://plugins.sigmaos.org/)
 and run its install command:
 
 ```bash
-omarchy plugin add https://github.com/njpatel/omapager.git
+sigmaos plugin add https://github.com/njpatel/omapager.git
 ```
 
 Until the new stable release is approved, the marketplace installs Git HEAD.
@@ -111,9 +111,9 @@ enable Omapager. Only one notification daemon can run at a time.
 
 ```bash
 sigmaos-shell shell rescanPlugins
-omarchy plugin disable sigmaos.notifications
-omarchy plugin enable njpatel.omapager --section center --after sigmaos.indicators
-omarchy restart shell
+sigmaos plugin disable sigmaos.notifications
+sigmaos plugin enable njpatel.omapager --section center --after sigmaos.indicators
+sigmaos restart shell
 ```
 
 ### Updates
@@ -122,19 +122,19 @@ Use the marketplace for release updates. For an edge checkout:
 
 ```bash
 git -C ~/.config/sigmaos/plugins/njpatel.omapager pull --ff-only
-omarchy restart shell
+sigmaos restart shell
 ```
 
 [Release notes](https://github.com/njpatel/omapager/releases) describe each update.
-Do not use `omarchy refresh shell`, which resets your shell configuration.
+Do not use `sigmaos refresh shell`, which resets your shell configuration.
 
 ### Remove Omapager
 
 ```bash
-omarchy plugin disable njpatel.omapager
-omarchy plugin remove njpatel.omapager
-omarchy plugin enable sigmaos.notifications
-omarchy restart shell
+sigmaos plugin disable njpatel.omapager
+sigmaos plugin remove njpatel.omapager
+sigmaos plugin enable sigmaos.notifications
+sigmaos restart shell
 ```
 
 Removal keeps notification history, icon cache and other state in
@@ -278,7 +278,7 @@ require `allowDefaultActionOnCardClick`.
 
 ### Optional bindings
 
-Check for conflicts with `omarchy menu keybindings --print` before adding these
+Check for conflicts with `sigmaos menu keybindings --print` before adding these
 to `~/.config/hypr/bindings.lua`. Use `hl.unbind` to remove a conflicting binding.
 
 ```lua
